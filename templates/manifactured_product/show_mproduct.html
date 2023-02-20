@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #d1c6c6;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #e9e9da;
+        }
+        </style>
+</head>
+<body>
+    
+    <table border="2px">
+        <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Amount</th>
+        <th>Measure</th>
+        <th>Unit Price</th>
+        <th>Code</th>
+        <th>Manufacture date</th>
+        <th>Active</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.product }}</td>
+        <td>{{ product.amount }}</td>
+        <td>{{ product.measure }}</td>
+        <td>{{ product.unit_price }}</td>
+        <td>{{ product.code }}</td>
+        <td>{{ product.manufacture_date }}</td>
+        <td>{{ product.active }}</td>
+        </tr>
+        {% endfor %}
+        <tbody></tbody>
+    </table>
+    
+    
+</body>
+</html>

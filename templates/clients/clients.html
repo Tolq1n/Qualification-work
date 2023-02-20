@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All clients</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #d1c6c6;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #e9e9da;
+        }
+        </style>
+</head>
+<body>
+    <center><h1>ALL CLIENTS</h1></center>
+    <table>
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Region</th>
+        <th>District</th>
+        <th>Address</th>
+        <th>Contact</th>
+        </tr>
+        {% for client in clients %}
+        <tr>
+        <td>{{ client.id }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{ client.region }}</td>
+        <td>{{ client.district }}</td>
+        <td>{{ client.address }}</td>
+        <td>{{ client.contact }}</td>
+        </tr>
+        {% endfor %}
+</body>
+</html>
