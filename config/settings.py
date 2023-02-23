@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'manifactured_product',
     'order',
     'api',
+    'authentication'
 ]
 
 MIDDLEWARE = [
