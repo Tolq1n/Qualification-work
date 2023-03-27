@@ -25,4 +25,6 @@ urlpatterns = [
     path('addclients/', include("client.urls")),
 
     path('loginuser/', include("employee.urls")),
+    
+    path('order/', include("order.urls")),
 ]

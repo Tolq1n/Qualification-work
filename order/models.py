@@ -12,7 +12,7 @@ class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    #unit_price = models.CharField(max_length=30)
+    unit_price = models.CharField(max_length=30)
     amount_order = models.FloatField()
     total_price = models.FloatField()
     discount = models.FloatField(default=0)

@@ -1,0 +1,36 @@
+
+
+
+<table border="2px">
+    <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Employee</th>
+    <th>Product</th>
+    <th>Unit Price</th>
+    <th>Amount order</th>
+    <th>Total price</th>
+    <th>Discount</th>
+    <th>Total Discount</th>
+    <th>Total price with discount </th>
+    <th>Currency</th>
+    <th>Payment type</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+    <td>{{ order.id }}</td>
+    <td>{{ order.client }}</td>
+    <td>{{ order.employee }}</td>
+    <td>{{ order.product }}</td>
+    <td>{{ order.unit_price }}</td>
+    <td>{{ order.amount_order }}</td>
+    <td>{{ order.total_price }}</td>
+    <td>{{ order.discount }}</td>
+    <td>{{ order.total_discount }}</td>
+    <td>{{ order.total_price_with_discaunt }}</td>
+    <td>{{ order.currency }}</td>
+    <td>{{ order.payment_type }}</td>
+    </tr>
+    {% endfor %}
+    <tbody></tbody>
+</table>
