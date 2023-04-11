@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from client.models import Client, Region, District
-from employee.models import Employee, Position
+from employee.models import Employee
 from manifactured_product.models import Product, ManufacturedProduct
 from rest_framework.views import APIView
-from .serializers import ClientSerializers, RegionSerializers, DistrictSerializers, EmployeeSerializers, PositionSerializers, ProductSerializers, ManufacturedProductSerializers
+from .serializers import ClientSerializers, RegionSerializers, DistrictSerializers, EmployeeSerializers, ProductSerializers, ManufacturedProductSerializers
 from rest_framework.response  import Response
 from rest_framework import status
 
@@ -49,15 +49,10 @@ class EmployeeAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
-class PositionAPIView(APIView):
-    """Get all positions"""
-    def get(self, request):
-        positions = Position.objects.all()
-        serializer = PositionSerializers(positions, many=True)
-        return Response(serializer.data)
+
     
     def post(self, request):
-        serializer = PositionSerializers(data=request.data)
+        
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

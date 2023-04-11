@@ -25,18 +25,8 @@
         <h1>Log IN</h1>
         <form  method="post">
             
-            {% csrf_token %}
-        <!-- Username    {{ form.username }}
-        Password    {{ form.password }} -->
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" id="username">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </div><br>
+            
+            {{ form.as_p }}
             <button type="submit">Login</button>
         </form>
     </center>

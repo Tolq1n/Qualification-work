@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from client.models import Client, Region, District
-from employee.models import Employee, Position
+from employee.models import Employee
 from manifactured_product.models import Product, ManufacturedProduct
 
 class RegionSerializers(serializers.ModelSerializer):
@@ -21,11 +21,6 @@ class ClientSerializers(serializers.ModelSerializer):
 class EmployeeSerializers(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = '__all__'
-
-class PositionSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Position
         fields = '__all__'
 
 
