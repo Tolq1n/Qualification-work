@@ -7,6 +7,10 @@ from .serializers import ClientSerializers, RegionSerializers, DistrictSerialize
 from rest_framework.response  import Response
 from rest_framework import status
 
+
+def home(request):
+    return render(request, 'home.html')
+
 class ClientAPIView(APIView):
     """Get all clients"""
     def get(self, request):

@@ -1,0 +1,16 @@
+{% if user.is_authenticated %}
+
+<form action="{% url 'logoutuser' %}">
+    <button>Logout</button>
+</form>
+<center><h1>{{ employee.username }}</h1></center>
+{% else %}
+
+<form action="{% url 'loginuser' %}">
+    <button>Logout</button>
+</form>
+
+{% endif %}
+
+
+

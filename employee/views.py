@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from .models import Employee
 from .forms import EmployeeForm
+from order.forms import OrderForm
+from manifactured_product.forms import ManufacturedProductForm
 
 
 
@@ -20,9 +22,9 @@ def loginuser(request):
             login(request, user)
             position = request.POST.get('position')
             if position == '1':
-                return redirect('/order')
+                return render(request, 'order/order.html', {'form':OrderForm()})
             else:
-                return redirect('addproduct')
+                return render(request, 'manifactured_product/manufactured_product.html', {'form':ManufacturedProductForm()})
             
         except Employee.DoesNotExist:
             return render(request, 'login.html', {'form':EmployeeForm(), "error": "User not found"})
@@ -33,7 +35,7 @@ def loginuser(request):
 def logoutuser(request):
     if request.method == 'GET':
         logout(request)
-        return redirect('loginuser')
+        return redirect('/')
 # def login(request):
 #      if request.method == 'POST':
 #             try:
