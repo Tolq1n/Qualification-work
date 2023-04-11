@@ -7,6 +7,9 @@
     <title>Add client</title>
 </head>
 <body>
+    <form action="{% url 'logoutuser' %}">
+        <button>Logout</button>
+      </form>
     <center>
     <form action="add_client" method="POST">
         {% csrf_token %}
