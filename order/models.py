@@ -6,8 +6,8 @@ from manifactured_product.models import Product
 
 
 class Order(models.Model):
-    CURRENCY = (("0", "UZS"), ("1", "RUB"), ("2", "USD") )
-    PAYMENT = (("0", "CASH"), ("1", "BANK CARD"), ("2", "TRANSFER"))       
+    CURRENCY = (("UZS", "UZS"), ("RUB", "RUB"), ("USD", "USD") )
+    PAYMENT = (("CASH", "CASH"), ("BANK CARD", "BANK CARD"), ("TRANSFER", "TRANSFER"))       
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
@@ -18,8 +18,8 @@ class Order(models.Model):
     discount = models.FloatField(default=0)
     total_discount = models.FloatField(default=0)
     total_price_with_discaunt = models.FloatField()
-    currency = models.CharField(max_length=1, choices=CURRENCY)
-    payment_type = models.CharField(max_length=1, choices = PAYMENT)
+    currency = models.CharField(max_length=9, choices=CURRENCY)
+    payment_type = models.CharField(max_length=9, choices = PAYMENT)
 
 
 
