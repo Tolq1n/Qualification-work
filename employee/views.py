@@ -7,7 +7,7 @@ from manifactured_product.forms import ManufacturedProductForm
 
 
 
-def loginuser(request):
+def loginpage(request):
     if request.method == 'POST':
         try:
             print(request.POST.get('username'))
@@ -19,6 +19,7 @@ def loginuser(request):
             user = Employee.objects.get(username=request.POST.get('username'), 
                                             position=request.POST.get('position'), 
                                             password=request.POST.get('password') )
+            print(user.username, 'login successful')
             login(request, user)
             position = request.POST.get('position')
             if position == '1':
@@ -36,18 +37,7 @@ def logoutuser(request):
     if request.method == 'GET':
         logout(request)
         return redirect('/')
-# def login(request):
-#      if request.method == 'POST':
-#             try:
-#                 print(request.GET.get('username'))
-#                 print(request.GET.get('password'))
-#                 user = Employee.objects.get(username=request.GET.get('username'), 
-#                                             # position=request.GET.get('position'), 
-#                                             password=request.GET.get('password') )
-#                 print(user.username)
-#                 return redirect('/addproduct')
-#             except Employee.DoesNotExist:
-#                   return render(request, 'login.html', {'form':EmployeeForm(), "error": "User not found"})
+
                 
     
         

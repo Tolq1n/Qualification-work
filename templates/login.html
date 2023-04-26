@@ -23,7 +23,7 @@
 
         {{ error }}
         <h1>Log IN</h1>
-        <form  method="post">
+        <form action="{% url 'loginpage' %}" method="post">
             
             
             {{ form.as_p }}

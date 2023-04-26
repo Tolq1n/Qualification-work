@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api.views import home
+from employee.views import login, loginpage, logoutuser
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,8 +26,12 @@ urlpatterns = [
 
     path('addclients/', include("client.urls")),
 
-    path('loginuser/', include("employee.urls")),
-    path('logout/', include("employee.urls")),
+    #path('login/', login, name='login'),
+    path('loginpage/', loginpage, name='loginpage'), 
+    path('logoutuser/', logoutuser, name='logoutuser'), 
+    
+    #path('loginuser/', include("employee.urls")),
+    #path('logout/', include("employee.urls")),
     
     path('order/', include("order.urls")),
 ]

@@ -12,7 +12,7 @@
   <form action="{% url 'logoutuser' %}">
     <button>Logout</button>
   </form>
-    <form action="" method="POST">
+    <form action="{% url 'addorder' %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button>save</button>
